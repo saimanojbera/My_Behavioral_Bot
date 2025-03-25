@@ -1,4 +1,4 @@
-# 🤖 Saimanoj's Voice Bot
+# 🤖 Saimanoj's Behavioral Bot
 
 This is a personalized voice-enabled chatbot designed as part of the Stage 1 interview assessment for the **Generative AI Developer** role at **Home.LLC**. The bot answers behavioral questions as *Saimanoj Bera*, leveraging a structured JSON profile and OpenAI’s GPT-4 API, all wrapped in a conversational chat interface using Streamlit.
 
