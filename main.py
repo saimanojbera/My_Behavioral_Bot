@@ -1,8 +1,12 @@
-from openai import OpenAI
 import streamlit as st
-import pyttsx3
+from openai import OpenAI
 import json
 import random
+import os
+
+# Voice I/O
+import pyttsx3
+import speech_recognition as sr
 
 # Initialize OpenAI client securely using Streamlit secrets
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
@@ -11,13 +15,12 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 def load_story_json_raw():
     try:
         with open('my_story.json', 'r') as file:
-            return file.read()  # return raw string
+            return file.read()
     except FileNotFoundError:
         return "Error: my_story.json not found."
     except Exception as e:
         return f"Error loading JSON: {str(e)}"
 
-# Inject full JSON into the system prompt
 def generate_system_prompt():
     story_json_raw = load_story_json_raw()
     return f"""
@@ -30,10 +33,8 @@ Use the following personal story and information in raw JSON format to guide you
 Keep responses short (<60 sec), grounded in real experience, and reflective. No fluff. Be real.
 """
 
-# GPT interaction
 def get_gpt_response(user_input):
     system_prompt = generate_system_prompt()
-
     try:
         response = client.chat.completions.create(
             model="gpt-4",
@@ -46,22 +47,49 @@ def get_gpt_response(user_input):
     except Exception as e:
         return f"Error generating response: {str(e)}"
 
+# Text-to-Speech (only local)
+def speak(text):
+    try:
+        if os.environ.get("IS_CLOUD", "true") == "true":
+            return
+        engine = pyttsx3.init()
+        engine.say(text)
+        engine.runAndWait()
+    except Exception as e:
+        print("Text-to-Speech Error:", e)
 
+# Voice Input via Microphone
+def listen():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        st.info("🎙️ Listening... Speak now")
+        audio = r.listen(source, phrase_time_limit=10)
+        try:
+            st.success("Transcribing...")
+            text = r.recognize_google(audio)
+            st.success(f"You said: {text}")
+            return text
+        except sr.UnknownValueError:
+            st.warning("Sorry, I couldn't understand your voice.")
+        except sr.RequestError:
+            st.error("Speech Recognition service is unavailable.")
+    return ""
+
+# UI Starts Here
 def main():
-    st.set_page_config(page_title="Saimanoj's behavioral Bot", layout="centered")
+    st.set_page_config(page_title="Saimanoj's Behavioral Bot", layout="centered")
     st.title("🤖 Saimanoj's Voice Bot")
-    st.caption("Ask a behavioral or personal interview question, and I’ll answer in my voice.")
+    st.caption("Ask a behavioral interview question — via voice or text — and get a voice + text response!")
 
-    # Initialize chat history
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
-    # Display chat messages from history
+    # Display previous chat history
     for entry in st.session_state.chat_history:
         with st.chat_message(entry["role"]):
             st.markdown(entry["content"])
 
-    # Suggested questions
+    # Suggested Questions
     suggested_questions = [
         "What’s your #1 superpower?",
         "What are the top 3 areas you’d like to grow in?",
@@ -74,39 +102,39 @@ def main():
         "Tell me about a time when you had an issue with a colleague."
     ]
 
-    sample_suggestions = random.sample(suggested_questions, 4)
-
     with st.expander("💡 Suggested Questions", expanded=True):
-        cols = st.columns(len(sample_suggestions))
-        for i, q in enumerate(sample_suggestions):
-            if cols[i].button(q):
+        cols = st.columns(4)
+        for i, q in enumerate(random.sample(suggested_questions, 4)):
+            if cols[i % 4].button(q):
                 st.session_state.user_input = q
 
-    # Manual input box
-    prompt = st.chat_input("Type your question here...")
+    # Voice or Text selection
+    input_mode = st.radio("Choose your input mode:", ["🎤 Speak", "⌨️ Type"])
 
-    # Final input comes from either chat box or suggestion
     user_message = None
-    if prompt:
-        user_message = prompt
-    elif "user_input" in st.session_state and st.session_state.user_input:
+    if input_mode == "🎤 Speak":
+        if st.button("Start Recording"):
+            user_message = listen()
+    else:
+        prompt = st.chat_input("Type your question here...")
+        if prompt:
+            user_message = prompt
+
+    if "user_input" in st.session_state and st.session_state.user_input:
         user_message = st.session_state.user_input
-        st.session_state.user_input = ""  # reset after using
+        st.session_state.user_input = ""
 
     if user_message:
-        # Add user message to chat
         st.session_state.chat_history.append({"role": "user", "content": user_message})
         with st.chat_message("user"):
             st.markdown(user_message)
 
-        # Generate assistant reply
         with st.chat_message("assistant"):
             with st.spinner("Thinking..."):
                 response = get_gpt_response(user_message)
                 st.markdown(response)
-                
+                speak(response)  # Voice output (works locally only)
 
-        # Add assistant response to chat history
         st.session_state.chat_history.append({"role": "assistant", "content": response})
 
 if __name__ == "__main__":
