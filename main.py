@@ -48,9 +48,17 @@ def get_gpt_response(user_input):
 
 # Text-to-speech
 def speak(text):
-    engine = pyttsx3.init()
-    engine.say(text)
-    engine.runAndWait()
+    if st.runtime.exists() and st.runtime.is_running_in_streamlit_cloud():
+        # Skip speech on Streamlit Cloud
+        return
+    try:
+        import pyttsx3
+        engine = pyttsx3.init()
+        engine.say(text)
+        engine.runAndWait()
+    except Exception as e:
+        print("TTS error:", e)
+
 
 def main():
     st.set_page_config(page_title="Saimanoj's Voice Bot", layout="centered")
