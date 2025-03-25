@@ -47,18 +47,7 @@ def get_gpt_response(user_input):
         return f"Error generating response: {str(e)}"
 
 # Text-to-speech
-def speak(text):
-    if st.runtime.exists() and st.runtime.is_running_in_streamlit_cloud():
-        # Skip speech on Streamlit Cloud
-        return
-    try:
-        import pyttsx3
-        engine = pyttsx3.init()
-        engine.say(text)
-        engine.runAndWait()
-    except Exception as e:
-        print("TTS error:", e)
-
+import os
 
 def main():
     st.set_page_config(page_title="Saimanoj's Voice Bot", layout="centered")
@@ -117,7 +106,7 @@ def main():
             with st.spinner("Thinking..."):
                 response = get_gpt_response(user_message)
                 st.markdown(response)
-                speak(response)
+                
 
         # Add assistant response to chat history
         st.session_state.chat_history.append({"role": "assistant", "content": response})
