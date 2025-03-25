@@ -1,0 +1,285 @@
+{
+    "basics": {
+      "name": "Saimanoj Bera",
+      "email": "saimanoj2509@gmail.com",
+      "phone": {
+        "india": "+91 7032823173",
+        "usa": "+1 3134782240"
+      },
+      "linkedin": "https://www.linkedin.com/in/saimanoj-bera-044831150",
+      "portfolio": "https://saimanojbera.github.io/"
+    },
+    "summary": "Results-oriented AI Engineer with over 3 years of experience in designing and deploying production-grade AI systems, specializing in large language models (LLMs), prompt engineering, NLP, and retrieval algorithms. Proven expertise in structuring and optimizing large datasets, enhancing model accuracy and interpretability. Passionate about leveraging AI to innovate and solve complex challenges, particularly within the semiconductor and electronics industries. Certified in AWS and Python for Data Science, with a Master's in Data Science from the University of Michigan.",
+    "experience": [
+      {
+        "company": "Outlier Ai",
+        "location": "Remote, USA",
+        "period": "May 2024 to Present",
+        "role": "Ai Engineer / Prompt Engineer",
+        "responsibilities": [
+          "Designed high precision prompts to increase Ai model accuracy by 20%.",
+          "Partnered with data science teams to align prompt strategies with business objectives.",
+          "Minimized biases and broadened adaptability through iteration of prompts.",
+          "Leveraged OpenAI and Hugging Face platforms to create solutions for focused prompts.",
+          "Conducted prompt performance analysis to refine prompts and model enhancements.",
+          "Tested and optimized prompt variations, improving response accuracy and reducing time by 15%."
+        ]
+      },
+      {
+        "company": "Tata Consultancy Services",
+        "location": "Bengaluru, India",
+        "period": "October 2020 to July 2022",
+        "role": "Data Engineer - ETL Specialist",
+        "responsibilities": [
+          "Optimized data processing from Teradata into PostgreSQL, reducing time by 30%.",
+          "Built robust data validation protocols increasing data accuracy by 25%.",
+          "Scheduled and monitored jobs on mainframes, reducing downtime by 20%.",
+          "Extracted data using optimized SQL queries from PostgreSQL, Hive, and Teradata.",
+          "Automated data cleansing and transformation using Shell and Python scripts.",
+          "Led knowledge transfer sessions to onboard team members.",
+          "Collaborated with stakeholders to align ETL processes with business goals.",
+          "Conducted root cause analysis, reducing recurring error rates by 30%.",
+          "Automated regular data extraction reducing manual effort by 40%.",
+          "Integrated advanced validation techniques into ETL pipelines."
+        ]
+      },
+      {
+        "company": "Indian Servers",
+        "location": "Vijayawada, India",
+        "period": "May 2019 to September 2020",
+        "role": "Data Science Analyst",
+        "responsibilities": [
+          "Supported healthcare and agriculture projects using deep learning and CV.",
+          "Designed data pipelines in Cloud SQL and implemented data governance standards.",
+          "Participated in code reviews and fostered team collaboration.",
+          "Created data mappings and specifications using SQL.",
+          "Used Python libraries for data cleaning and feature engineering.",
+          "Built dashboards using Tableau and Power BI.",
+          "Integrated ML models into data workflows for predictive analytics."
+        ]
+      }
+    ],
+    "skills": {
+      "programming": [
+        "Python",
+        "R",
+        "SQL",
+        "Java",
+        "Shell Scripting",
+        "HTML",
+        "JavaScript"
+      ],
+      "ai_ml": [
+        "Deep Learning",
+        "NLP",
+        "Generative AI",
+        "RAG Pipelines",
+        "AI Agents",
+        "LLMs Fine tuning",
+        "Computer Vision",
+        "Graph database",
+        "Predictive Modeling",
+        "TensorFlow",
+        "PyTorch",
+        "OpenAI",
+        "Hugging Face",
+        "Vector databases",
+        "semantic search",
+        "FAISS",
+        "Chroma DB"
+      ],
+      "data_engineering": [
+        "ETL pipelines",
+        "Informatica",
+        "PostgreSQL",
+        "Teradata",
+        "Hadoop",
+        "Hive",
+        "Spark",
+        "Big Query",
+        "neo4j"
+      ],
+      "cloud": [
+        "AWS",
+        "GCP",
+        "Azure",
+        "Google Cloud SQL"
+      ],
+      "visualization": [
+        "Tableau",
+        "Power BI",
+        "Seaborn",
+        "Matplotlib",
+        "Plotly"
+      ],
+      "tools_collaboration": [
+        "Git",
+        "Jira",
+        "CI/CD",
+        "Agile methodologies"
+      ],
+      "operating_systems": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ]
+    },
+    "education": [
+      {
+        "degree": "Master in Data Science",
+        "institution": "University of Michigan",
+        "period": "August 2022 to April 2024",
+        "coursework": [
+          "Big Data Analytics & Visualization",
+          "Deep Learning",
+          "Machine Learning",
+          "Neural Networks",
+          "Large Language Models",
+          "Database Management Systems",
+          "Artificial Intelligence",
+          "Applied Regression Analysis",
+          "Advanced Data Mining",
+          "Applied Data Analytics & Modeling for Enterprise Systems",
+          "Security and Privacy in Cloud Computing",
+          "Management Science"
+        ]
+      },
+      {
+        "degree": "B. Tech in Computer Science and Engineering",
+        "institution": "V R Siddhartha Engineering College, Vijayawada",
+        "period": "June 2016 to September 2020",
+        "coursework": [
+          "Data structures",
+          "Programming in C",
+          "Programming in Python",
+          "Object Oriented Programming Using Java",
+          "Computer Organization",
+          "Computer Networks",
+          "Database Systems",
+          "Operating Systems",
+          "Internet of Things",
+          "Design and Analysis of Algorithms",
+          "Probability and Statistics",
+          "Calculus",
+          "Complex Analysis and Numerical Methods",
+          "Image Processing",
+          "Cloud Computing",
+          "Cyber Security"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Aqua Robot for Dead Shrimp Detection",
+        "tech_stack": [
+          "Python",
+          "TensorFlow",
+          "OpenCV"
+        ],
+        "description": "Engineered an intelligent application using TensorFlow's Object Detection API to identify and monitor dead shrimp in aquatic environments with preciseness. This achieved a 98% improvement in data accuracy and empowered healthier aquatic health monitoring processes."
+      },
+      {
+        "title": "AI Resume Reviewer",
+        "tech_stack": [
+          "Python",
+          "NLP",
+          "Streamlit",
+          "OpenAI API"
+        ],
+        "description": "Developed an interactive application using Python, Streamlit, and OpenAI API to provide real-time feedback on resumes, optimizing their alignment with job descriptions. The tool incorporates Natural Language Processing (NLP) to analyze readability, formatting, and keyword relevance, offering actionable suggestions to enhance resumes for industry-specific roles. Designed a user-friendly interface and maintained the project on GitHub, implementing iterative improvements based on user feedback."
+      },
+      {
+        "title": "Chatbot Debate",
+        "tech_stack": [
+          "Python",
+          "NLP",
+          "Machine Learning",
+          "Gradio"
+        ],
+        "description": "Developed an AI-powered debate system featuring simulated discussions between personas like Steve Jobs and Elon Musk, utilizing GPT-4o and LLaMA-3.3 models via the Groq API. Implemented a referee bot to analyze transcripts and determine winners based on logic, innovation, and impact. Designed a dynamic chat interface for real-time debate visualization."
+      },
+      {
+        "title": "AQI Forecasting AI Agent",
+        "tech_stack": [
+          "Python",
+          "NLP",
+          "Langchain",
+          "OpenAI",
+          "OpenWeather"
+        ],
+        "description": "Developed an AI-powered agent that provides real-time AQI (Air Quality Index) data and forecast predictions using machine learning models. It integrates Lang Chain to enable natural language queries for AQI-related information."
+      },
+      {
+        "title": "Customer Support Chatbot with RAG and Fine-tuned LLaMA",
+        "tech_stack": [
+          "Python",
+          "FAISS",
+          "RAG",
+          "Fine-tuning"
+        ],
+        "description": "Implemented a Retrieval-Augmented Generation (RAG) chatbot for insurance customer support. The system leverages a fine-tuned LLaMA model, integrated with a document retrieval system using FAISS, to provide accurate and context-aware responses to customer queries."
+      },
+      {
+        "title": "Advanced RAG Pipeline",
+        "tech_stack": [
+          "Python",
+          "Crawl4AI",
+          "RAG",
+          "Chroma DB",
+          "Streamlit",
+          "Neural Networks"
+        ],
+        "description": "Developed a Retrieval-Augmented Generation (RAG) pipeline utilizing Chroma DB for efficient information retrieval. Implemented web crawling with Playwright and Crawl4AI to extract structured text and metadata from dynamic web pages. Performed semantic chunking and stored embeddings to facilitate rapid, contextually relevant responses. Deployed an interactive Streamlit web application to enable user-friendly search and retrieval functionalities."
+      },
+      {
+        "title": "AI Judge",
+        "tech_stack": [
+          "Python",
+          "Streamlit",
+          "Neural Networks",
+          "LLMs"
+        ],
+        "description": "Designed a Gradio-based application to evaluate the performance of multiple AI models, including GPT-3.5 Turbo, GPT-4o, GPT-4, and GPT-4o Mini. The system simulates a judging process where each model alternates as a judge to assess responses from other models across predefined questions, aiming to identify the most accurate and relevant answers. Features include iterative judging, vote tracking, and automatic winner declaration."
+      }
+    ],
+    "certifications": [
+      "AWS: Certified Cloud Practitioner",
+      "IBM: Python for Data Science, Programming in Python",
+      "NPTEL: Programming, Data Structures, and Algorithms in Python",
+      "NPTEL: Database Management Systems"
+    ],
+    "testimonials": [
+      {
+        "from": "colleague 1",
+        "content": "He's dependable - not in a \"texts you every day\" kind of way, but in the sense that when things go south or when you're genuinely in a tough spot, he shows up. Whether it's support or just handling something that needs to get done, he steps in when people are counting on him. You don't need to remind him - he just knows when he's needed.\n\nHe's got this caretaker streak. If he's close to you, he treats your problems like his own. And it's not just limited to his friends - he naturally extends that same respect and care to their families too. It's subtle, but very real.\n\nWhen it comes to responsibility, he's the kind of guy who'll take over long, boring, or tiring tasks - like driving for hours without complaining, just because he knows not everyone can handle it. He doesn't jump into everything, but if it's something he knows he's good at or confident with, he'll adapt and take charge. It's selective, but efficient.\n\nHe's also pretty good in the kitchen - not flashy about it, but his cooking is solid. He knows what he's doing, and it adds to that whole \"takes care of things\" vibe without making it a big deal.\n\nIn team or project settings, he tends to bring smart, innovative ideas - the kind that help everyone get unstuck or move toward the next step. He works best when there's pressure, deadlines, or some kind of challenge involved. That's when he starts contributing in a way that really stands out.\n\nHe can be a little irrational at times - not completely reckless, but stubborn in the sense that he stands firmly by what he believes. It can be frustrating in the moment, but that same trait also makes him grounded and consistent."
+      },
+      {
+        "from": "colleague 2",
+        "content": "I have had the pleasure of working with Manoj on several machine learning projects, and I am consistently impressed by his dedication and methodical approach. His behavioral skills and technical expertise are truly commendable.\n\nManoj is diligent in his research, always taking the time to study relevant papers and understand the strategies and technologies implemented by others. For instance, during our recent project on predictive analytics, Manoj thoroughly reviewed multiple research papers to identify the most effective algorithms. He is not content with merely replicating existing methods; he actively seeks out better strategies and innovative solutions. I recall a situation where he proposed an alternative algorithm that significantly improved our model's accuracy.\n\nIn every project, Manoj follows a structured approach. He begins by focusing on the problem statement and meticulously gathering all requirements, recognizing that this foundational step is crucial for the success of the project. During our work on a recommendation system, Manoj spent considerable time with stakeholders to ensure we had a comprehensive understanding of their needs. His attention to detail in this phase was instrumental in defining clear and actionable requirements.\n\nOnce the requirements are clear, Manoj explores various algorithms, rigorously testing and evaluating them to determine the best model for the task at hand. In our project on image classification, Manoj tested multiple models, including convolutional neural networks and support vector machines, to identify the most effective approach. His commitment to finding the optimal solution is evident in the thoroughness of his work.\n\nThroughout our collaborations, I have observed Manoj's ability to combine deep research, strategic thinking, and a systematic approach. His proactive nature and willingness to explore new ideas make him an invaluable collaborator in any machine learning endeavor."
+      }
+    ],
+    "personal_traits": {
+      "identity": "Engineer by heart, creative problem solver, structured thinker. Deeply committed to AI as a tool for meaningful impact. Calm under pressure, thoughtful in communication, and grounded in values. Often takes initiative in high-stress situations and thrives on deep, independent work.",
+      "misconception": "People often think I’m too serious or intense at first. In reality, I bring a quiet playfulness and lightness to both collaboration and problem-solving. I care deeply — about people, quality, and purpose.",
+      "boundary_pushing": "I actively pursue discomfort: whether it's shipping weekend AI prototypes, learning new tools in days, or exploring philosophical questions about AI, consciousness, and ethics. I create self set stretch goals and deliver consistently.",
+      "motivation": "I'm motivated by building systems that make people better — tools that save time, reduce friction, and expand creativity. AI is my medium because it blends logic, language, and imagination.",
+      "superpower": "My superpower is rapid experimentation with purpose. I can take an idea—whether it's improving prompt accuracy, building a chatbot with RAG, or simulating a debate between AI personas—and turn it into a working prototype quickly, always anchored to a clear objective. I thrive in ambiguous environments, bringing structure, speed, and creativity without compromising on the outcome."
+
+    },
+        "top_3_growth_areas": [
+          {
+            "area": "Voice AI and Multimodal Interfaces",
+            "description": "I want to expand my GenAI capabilities beyond text into voice, especially integrating speech recognition and real-time interaction with CRM workflows."
+          },
+          {
+            "area": "Sales-Centric AI Personalization",
+            "description": "I'm looking to deepen my understanding of the sales lifecycle and apply AI more strategically to maximize lead conversion and client retention."
+          },
+          {
+            "area": "Team Leadership in AI Projects",
+            "description": "While I've led initiatives independently, I'd love to grow into a role where I guide a small team to build end-to-end AI products, mentoring others and shaping technical direction."
+          }
+        ]
+    }
+      
+  
