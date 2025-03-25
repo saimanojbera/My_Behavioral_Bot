@@ -46,8 +46,6 @@ def get_gpt_response(user_input):
     except Exception as e:
         return f"Error generating response: {str(e)}"
 
-# Text-to-speech
-import os
 
 def main():
     st.set_page_config(page_title="Saimanoj's behavioral Bot", layout="centered")

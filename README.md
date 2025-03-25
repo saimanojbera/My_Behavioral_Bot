@@ -6,7 +6,7 @@ This is a personalized voice-enabled chatbot designed as part of the Stage 1 int
 
 ## 🚀 Live Demo
 
-👉 **App Link**: [https://your-app-name.streamlit.app](#)  
+👉 **App Link**: [https://my-behavioral-bot.streamlit.app/](#)  
 💬 Try asking questions like:
 - "What’s your #1 superpower?"
 - "What motivates you in your work?"
@@ -41,8 +41,8 @@ This is a personalized voice-enabled chatbot designed as part of the Stage 1 int
 1. **Clone this repo**
 
 ```bash
-git clone https://github.com/your-username/voicebot-home-llc.git
-cd voicebot-home-llc
+git clone https://github.com/saimanojbera/My_Behavioral_Bot.git
+cd My_Behavioral_Bot
 ```
 
 2. **(Optional) Create a virtual environment**
