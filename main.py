@@ -3,10 +3,8 @@ from openai import OpenAI
 import json
 import random
 import os
-
-# Voice I/O
-import pyttsx3
-import speech_recognition as sr
+from gtts import gTTS
+import tempfile
 
 # Initialize OpenAI client securely using Streamlit secrets
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
@@ -47,39 +45,21 @@ def get_gpt_response(user_input):
     except Exception as e:
         return f"Error generating response: {str(e)}"
 
-# Text-to-Speech (only local)
+# Cloud-compatible voice output using gTTS
 def speak(text):
     try:
-        if os.environ.get("IS_CLOUD", "true") == "true":
-            return
-        engine = pyttsx3.init()
-        engine.say(text)
-        engine.runAndWait()
+        tts = gTTS(text)
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmpfile:
+            tts.save(tmpfile.name)
+            st.audio(tmpfile.name, format="audio/mp3")
     except Exception as e:
-        print("Text-to-Speech Error:", e)
-
-# Voice Input via Microphone
-def listen():
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        st.info("🎙️ Listening... Speak now")
-        audio = r.listen(source, phrase_time_limit=10)
-        try:
-            st.success("Transcribing...")
-            text = r.recognize_google(audio)
-            st.success(f"You said: {text}")
-            return text
-        except sr.UnknownValueError:
-            st.warning("Sorry, I couldn't understand your voice.")
-        except sr.RequestError:
-            st.error("Speech Recognition service is unavailable.")
-    return ""
+        st.warning(f"Voice generation failed: {e}")
 
 # UI Starts Here
 def main():
     st.set_page_config(page_title="Saimanoj's Behavioral Bot", layout="centered")
     st.title("🤖 Saimanoj's Voice Bot")
-    st.caption("Ask a behavioral interview question — via voice or text — and get a voice + text response!")
+    st.caption("Ask a behavioral interview question — via text — and get a voice + text response!")
 
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
@@ -108,19 +88,13 @@ def main():
             if cols[i % 4].button(q):
                 st.session_state.user_input = q
 
-    # Voice or Text selection
-    input_mode = st.radio("Choose your input mode:", ["🎤 Speak", "⌨️ Type"])
-
+    # Input
+    prompt = st.chat_input("Type your question here...")
     user_message = None
-    if input_mode == "🎤 Speak":
-        if st.button("Start Recording"):
-            user_message = listen()
-    else:
-        prompt = st.chat_input("Type your question here...")
-        if prompt:
-            user_message = prompt
 
-    if "user_input" in st.session_state and st.session_state.user_input:
+    if prompt:
+        user_message = prompt
+    elif "user_input" in st.session_state and st.session_state.user_input:
         user_message = st.session_state.user_input
         st.session_state.user_input = ""
 
@@ -133,7 +107,7 @@ def main():
             with st.spinner("Thinking..."):
                 response = get_gpt_response(user_message)
                 st.markdown(response)
-                speak(response)  # Voice output (works locally only)
+                speak(response)  # Voice output using gTTS
 
         st.session_state.chat_history.append({"role": "assistant", "content": response})
 
