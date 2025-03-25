@@ -6,7 +6,7 @@ This is a personalized voice-enabled chatbot designed as part of the Stage 1 int
 
 ## 🚀 Live Demo
 
-👉 **App Link**: [https://my-behavioral-bot.streamlit.app/](#)  
+👉 **App Link**: [https://my-behavioral-bot.streamlit.app](#)  
 💬 Try asking questions like:
 - "What’s your #1 superpower?"
 - "What motivates you in your work?"
