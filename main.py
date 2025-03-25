@@ -50,7 +50,7 @@ def get_gpt_response(user_input):
 import os
 
 def main():
-    st.set_page_config(page_title="Saimanoj's Voice Bot", layout="centered")
+    st.set_page_config(page_title="Saimanoj's behavioral Bot", layout="centered")
     st.title("🤖 Saimanoj's Voice Bot")
     st.caption("Ask a behavioral or personal interview question, and I’ll answer in my voice.")
 
